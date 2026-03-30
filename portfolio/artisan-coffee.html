@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Coffee Co. — Lumis Studio Case Study</title>
+    <meta name="description" content="How Lumis Studio built an autonomous e-commerce site with AI agents that increased organic traffic by 45% and boosted sales by 28% for Artisan Coffee Co.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/styles.css">
+    <style>
+        .case-study { padding: 80px 0; }
+        .case-header { text-align: center; max-width: 800px; margin: 0 auto 60px; }
+        .case-header h1 { font-size: 3rem; margin-bottom: 16px; }
+        .case-meta { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; flex-wrap: wrap; }
+        .case-meta-item { display: flex; flex-direction: column; align-items: center; }
+        .case-meta-label { font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-light); margin-bottom: 4px; }
+        .case-meta-value { font-weight: 600; color: var(--color-primary); }
+        .case-section { margin-bottom: 60px; }
+        .case-section h2 { font-size: 2rem; margin-bottom: 24px; }
+        .case-section p { font-size: 1.125rem; line-height: 1.7; margin-bottom: 16px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 40px 0; }
+        .metric-card { background: var(--color-bg); padding: 24px; border-radius: var(--radius-md); text-align: center; }
+        .metric-number { font-size: 2.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 8px; }
+        .metric-label { font-size: 0.875rem; color: var(--color-text-light); }
+        .agent-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 24px; }
+        .agent-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 20px; }
+        .agent-card h4 { margin-bottom: 8px; color: var(--color-primary); }
+        .agent-card p { font-size: 0.875rem; margin: 0; }
+        .quote { background: var(--color-surface); border-left: 4px solid var(--color-primary); padding: 24px; margin: 40px 0; font-style: italic; }
+        .quote-author { margin-top: 16px; font-weight: 600; font-style: normal; }
+        .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 32px; }
+        .gallery-item { border-radius: var(--radius-md); overflow: hidden; background: linear-gradient(135deg, var(--color-primary) 0%, #00D4FF 100%); height: 250px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 32px; color: var(--color-text-light); }
+        .back-link:hover { color: var(--color-primary); }
+        @media (max-width: 768px) {
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../brand/logo.svg" alt="Lumis Studio" width="120">
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#services">Services</a>
+                <a href="../index.html#work">Our Work</a>
+                <a href="../index.html#process">Process</a>
+                <a href="../index.html#contact" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container case-study">
+        <a href="../index.html#work" class="back-link">← Back to Portfolio</a>
+
+        <!-- Case Header -->
+        <header class="case-header">
+            <span class="section-badge">Case Study</span>
+            <h1>Artisan Coffee Co.</h1>
+            <div class="case-meta">
+                <div class="case-meta-item">
+                    <span class="case-meta-label">Industry</span>
+                    <span class="case-meta-value">E-commerce / Retail</span>
+                </div>
+                <div class="case-meta-item">
+                    <span class="case-meta-label">Service Tier</span>
+                    <span class="case-meta-value">Autonomous</span>
+                </div>
+                <div class="case-meta-item">
+                    <span class="case-meta-label">Timeline</span>
+                    <span class="case-meta-value">5 weeks</span>
+                </div>
+                <div class="case-meta-item">
+                    <span class="case-meta-label">Launch Date</span>
+                    <span class="case-meta-value">January 2026</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Challenge Section -->
+        <section class="case-section">
+            <h2>The Challenge</h2>
+            <p>Artisan Coffee Co. was struggling with an outdated e-commerce platform that wasn't converting visitors. Their organic traffic had plateaued, and they lacked the technical resources to implement proper SEO, performance optimization, or conversion tracking. They needed a modern, fast, and intelligent site that would not only showcase their premium coffee products but also continuously improve itself.</p>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="case-section">
+            <h2>Our Agent-First Solution</h2>
+            <p>We built a completely custom e-commerce platform with integrated autonomous agents that handle SEO, performance, and conversion optimization 24/7. The site features a clean, warm design that reflects the brand's artisanal values while leveraging cutting-edge agent technology to drive growth.</p>
+
+            <h3 style="margin-top: 32px; margin-bottom: 16px;">Agents Deployed</h3>
+            <div class="agent-list">
+                <div class="agent-card">
+                    <h4>Autonomous SEO Agent</h4>
+                    <p>Continuously analyzes search trends, optimizes meta tags, generates schema markup, and suggests content improvements. Increased organic impressions by 45% in 3 months.</p>
+                </div>
+                <div class="agent-card">
+                    <h4>Performance Agent</h4>
+                    <p>Monitors Core Web Vitals, auto-optimizes images, implements lazy loading, and maintains 95+ Lighthouse scores across all pages.</p>
+                </div>
+                <div class="agent-card">
+                    <h4>Conversion Agent</h4>
+                    <p>Runs continuous A/B tests on CTAs, product page layouts, and checkout flows. Identified a 28% lift in add-to-cart rate through iterative testing.</p>
+                </div>
+                <div class="agent-card">
+                    <h4>Inventory Insight Agent</h4>
+                    <p>Tracks product performance, identifies bestsellers, and provides automated recommendations for product highlights and promotions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="case-section">
+            <h2>Results & Impact</h2>
+            <p>Within three months of launch, Artisan Coffee Co. saw dramatic improvements across all key metrics. The autonomous agents continued to optimize the site even during the team's sleep, delivering compounding returns.</p>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number">45%</div>
+                    <div class="metric-label">Increase in Organic Traffic</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">28%</div>
+                    <div class="metric-label">Boost in Conversion Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">2.1s</div>
+                    <div class="metric-label">Average Page Load Time</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">98</div>
+                    <div class="metric-label">Lighthouse Score (Avg)</div>
+                </div>
+            </div>
+
+            <div class="quote">
+                <p>"Lumis didn't just build us a website—they built us an autonomous growth engine. The SEO agent alone has paid for itself many times over. Our site is faster, ranks better, and converts higher than ever. And it keeps getting better without us lifting a finger."</p>
+                <div class="quote-author">— Maria Santos, Founder, Artisan Coffee Co.</div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="case-section">
+            <h2>Project Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="case-section" style="text-align: center; padding: 60px 0; background: var(--color-bg); border-radius: var(--radius-md);">
+            <h2>Ready to Achieve Similar Results?</h2>
+            <p style="max-width: 600px; margin: 16px auto 32px;">Let's discuss how our agent-first approach can transform your web presence and drive measurable growth.</p>
+            <a href="../index.html#contact" class="btn btn-primary btn-large">Start Your Project</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Lumis Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/script.js"></script>
+</body>
+</html>

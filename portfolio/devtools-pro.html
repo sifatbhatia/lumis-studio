@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools Pro — Lumis Studio Case Study</title>
+    <meta name="description" content="How Lumis Studio built a conversion-optimized landing page with autonomous A/B testing that increased trial signups by 2.3x for DevTools Pro.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/styles.css">
+    <style>
+        .case-study { padding: 80px 0; }
+        .case-header { text-align: center; max-width: 800px; margin: 0 auto 60px; }
+        .case-header h1 { font-size: 3rem; margin-bottom: 16px; }
+        .case-meta { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; flex-wrap: wrap; }
+        .case-meta-item { display: flex; flex-direction: column; align-items: center; }
+        .case-meta-label { font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-light); margin-bottom: 4px; }
+        .case-meta-value { font-weight: 600; color: var(--color-primary); }
+        .case-section { margin-bottom: 60px; }
+        .case-section h2 { font-size: 2rem; margin-bottom: 24px; }
+        .case-section h3 { font-size: 1.5rem; margin: 32px 0 16px; }
+        .case-section p { font-size: 1.125rem; line-height: 1.7; margin-bottom: 16px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 40px 0; }
+        .metric-card { background: var(--color-bg); padding: 24px; border-radius: var(--radius-md); text-align: center; }
+        .metric-number { font-size: 2.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 8px; }
+        .metric-label { font-size: 0.875rem; color: var(--color-text-light); }
+        .agent-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 24px; }
+        .agent-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 20px; }
+        .agent-card h4 { margin-bottom: 8px; color: var(--color-primary); }
+        .agent-card p { font-size: 0.875rem; margin: 0; }
+        .quote { background: var(--color-surface); border-left: 4px solid var(--color-primary); padding: 24px; margin: 40px 0; font-style: italic; }
+        .quote-author { margin-top: 16px; font-weight: 600; font-style: normal; }
+        .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 32px; }
+        .gallery-item { border-radius: var(--radius-md); overflow: hidden; background: linear-gradient(135deg, var(--color-primary) 0%, #00D4FF 100%); height: 250px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 32px; color: var(--color-text-light); }
+        .back-link:hover { color: var(--color-primary); }
+        .code-block {
+            background: var(--color-text);
+            color: #e0e0e0;
+            padding: 24px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .feature-icon {
+            color: var(--color-success);
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        @media (max-width: 768px) {
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery { grid-template-columns: 1fr; }
+            .feature-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../brand/logo.svg" alt="Lumis Studio" width="120">
+            </a>
+            <div class="nav-links">
+                <a href="../index.html#services">Services</a>
+                <a href="../index.html#work">Our Work</a>
+                <a href="../index.html#process">Process</a>
+                <a href="../index.html#contact" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container case-study">
+        <a href="../index.html#work" class="back-link">← Back to Portfolio</a>
+
+        <!-- Case Header -->
+        <header class="case-header">
+            <span class="section-badge">Case Study</span>
+            <h1>DevTools Pro</h1>
+            <div class="case-meta">
+                <div class="case-meta-item">
+                    <span class="case-meta-label">Industry</span>
+                    <span class="case-meta-value">SaaS / Developer Tools</span>
+                </div>
+                <div class="case-meta-item">
+                    <span class="case-meta-label">Service Tier</span>
+                    <span class="case-meta-value">Growth</span>
+                </div>
+                <div class="case-meta-item">
+                    <span class="case-meta-label">Timeline</span>
+                    <span class="case-meta-value">3 weeks</span>
+                </div>
+                <div class="case-meta-item">
+                    <span class="case-meta-label">Launch Date</span>
+                    <span class="case-meta-value">February 2026</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Challenge Section -->
+        <section class="case-section">
+            <h2>The Challenge</h2>
+            <p>DevTools Pro offers a powerful code analysis tool for developers, but their landing page was failing to convert visitors into trial users. The messaging was unclear, the value proposition wasn't compelling, and there was no systematic approach to improving conversion rates. They needed a high-performance, conversion-optimized page that would clearly communicate their product's value and drive more signups.</p>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="case-section">
+            <h2>Our Agent-First Solution</h2>
+            <p>We completely redesigned and rebuilt their landing page with a focus on clear messaging, social proof, and frictionless conversion paths. The page was built with an autonomous A/B testing agent that continuously tests different headlines, CTAs, layouts, and social proof placements to maximize conversion rates.</p>
+
+            <h3 style="margin-top: 32px; margin-bottom: 16px;">Key Features Implemented</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Clear, benefit-driven headline hierarchy</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Social proof section with logos and testimonials</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Feature breakdown with visual diagrams</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Multiple conversion points (header, mid-page, footer)</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Pricing table with clear comparison</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>FAQ accordion reducing friction</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 32px; margin-bottom: 16px;">Agents Deployed</h3>
+            <div class="agent-list">
+                <div class="agent-card">
+                    <h4>Conversion Agent</h4>
+                    <p>Runs continuous A/B tests on headlines, CTAs, layouts, and social proof placements. Automatically implements winning variants and continues iterating.</p>
+                </div>
+                <div class="agent-card">
+                    <h4>Performance Agent</h4>
+                    <p>Optimizes images, implements code splitting, and maintains 95+ Lighthouse scores. Page loads in under 2 seconds on all connections.</p>
+                </div>
+                <div class="agent-card">
+                    <h4>Analytics Agent</h4>
+                    <p>Provides real-time dashboards showing conversion funnel performance, A/B test results, and actionable insights for the marketing team.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="case-section">
+            <h2>Results & Impact</h2>
+            <p>The autonomous A/B testing agent identified multiple winning variants that significantly improved conversion rates. Within 8 weeks, trial signups increased dramatically while maintaining excellent performance metrics.</p>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number">2.3x</div>
+                    <div class="metric-label">Increase in Trial Signups</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">-35%</div>
+                    <div class="metric-label">Reduction in Bounce Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">1.8s</div>
+                    <div class="metric-label">Average Page Load Time</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number">97</div>
+                    <div class="metric-label">Lighthouse Score</div>
+                </div>
+            </div>
+
+            <div class="quote">
+                <p>"The results speak for themselves. Our trial signups more than doubled, and the page keeps getting better. The A/B testing agent found variations we never would have thought of. Lumis truly delivered an autonomous growth system."</p>
+                <div class="quote-author">— James Kim, CEO, DevTools Pro</div>
+            </div>
+        </section>
+
+        <!-- Technical Details -->
+        <section class="case-section">
+            <h2>Technical Implementation</h2>
+            <p>The landing page was built with performance and conversion optimization at its core. Key technical decisions included:</p>
+
+            <div class="code-block">
+<!-- Static HTML with minimal JavaScript for optimal performance -->
+&lt;head&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+  &lt;link rel="preload" as="style" href="critical.css"&gt;
+  &lt;script defer src="conversion-agent.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+            </div>
+
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <span class="feature-icon">⚡</span>
+                    <span>Static HTML generation for instant page loads</span>
+                </li>
+                <li class="feature-item">
+                    <span class="feature-icon">📊</span>
+                    <span>Integration with analytics and A/B testing platforms</span>
+                </li>
+                <li class="feature-item">
+                    <span class="feature-icon">🎯</span>
+                    <span>Multiple conversion tracking events</span>
+                </li>
+                <li class="feature-item">
+                    <span class="feature-icon">📱</span>
+                    <span>Mobile-first responsive design</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="case-section">
+            <h2>Project Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="case-section" style="text-align: center; padding: 60px 0; background: var(--color-bg); border-radius: var(--radius-md);">
+            <h2>Ready to Achieve Similar Results?</h2>
+            <p style="max-width: 600px; margin: 16px auto 32px;">Let's discuss how our agent-first approach can transform your web presence and drive measurable growth.</p>
+            <a href="../index.html#contact" class="btn btn-primary btn-large">Start Your Project</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 Lumis Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/script.js"></script>
+</body>
+</html>
