@@ -1,320 +1,741 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumis Studio — Agent-first Web Agency</title>
-    <meta name="description" content="We build websites that work themselves. Agent-first web development with autonomous AI systems that optimize, adapt, and grow your business 24/7.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lumis Studio builds agent-first websites that optimize, adapt, and grow while you sleep. Modern web agency powered by autonomous AI systems.">
+  <title>Lumis Studio — Agent-first Web Agency</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===== CSS Variables ===== */
+    :root {
+      /* Primary Colors */
+      --lumis-light: #F5F5F7;
+      --clarity-white: #FFFFFF;
+      --agent-blue: #0066FF;
+      --deep-space: #0A0A0F;
+      
+      /* Secondary Colors */
+      --growth-green: #10B981;
+      --warning-amber: #F59E0B;
+      --soft-gray: #E5E7EB;
+      --text-muted: #6B7280;
+      
+      /* Typography */
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-2xl: 5rem;
+      
+      /* Transitions */
+      --transition-fast: 150ms ease;
+      --transition-base: 300ms ease;
+    }
+
+    /* ===== Reset & Base ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--deep-space);
+      background: var(--clarity-white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--agent-blue);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    a:hover {
+      color: #0052CC;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ===== Layout ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    section {
+      padding: var(--space-2xl) 0;
+    }
+
+    /* ===== Header ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--soft-gray);
+      z-index: 1000;
+      padding: var(--space-sm) 0;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .logo svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .logo-text {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--deep-space);
+    }
+
+    .nav {
+      display: flex;
+      gap: var(--space-lg);
+    }
+
+    .nav a {
+      color: var(--deep-space);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover {
+      color: var(--agent-blue);
+    }
+
+    .cta-button {
+      background: var(--agent-blue);
+      color: white !important;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all var(--transition-base);
+    }
+
+    .cta-button:hover {
+      background: #0052CC;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      padding-top: calc(80px + var(--space-2xl));
+      padding-bottom: var(--space-2xl);
+      background: linear-gradient(135deg, var(--lumis-light) 0%, var(--clarity-white) 100%);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: var(--space-md);
+      letter-spacing: -0.02em;
+    }
+
+    .hero .tagline {
+      font-size: clamp(1.25rem, 3vw, 1.5rem);
+      color: var(--text-muted);
+      margin-bottom: var(--space-xl);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--agent-blue);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all var(--transition-base);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: #0052CC;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.25);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--deep-space);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: 2px solid var(--soft-gray);
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--agent-blue);
+      color: var(--agent-blue);
+    }
+
+    /* ===== Features Section ===== */
+    .features {
+      background: var(--clarity-white);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      margin-bottom: var(--space-sm);
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-lg);
+    }
+
+    .feature-card {
+      padding: var(--space-lg);
+      border-radius: 12px;
+      background: var(--lumis-light);
+      transition: all var(--transition-base);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--agent-blue);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-md);
+      font-size: 1.5rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* ===== Services/Pricing Section ===== */
+    .services {
+      background: var(--lumis-light);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-lg);
+    }
+
+    .pricing-card {
+      background: var(--clarity-white);
+      border-radius: 16px;
+      padding: var(--space-xl);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: all var(--transition-base);
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border: 2px solid var(--agent-blue);
+      transform: scale(1.02);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .pricing-card.featured:hover {
+      transform: scale(1.02) translateY(-4px);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--agent-blue);
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--agent-blue);
+      margin: var(--space-md) 0;
+    }
+
+    .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin: var(--space-lg) 0;
+    }
+
+    .pricing-card li {
+      padding: var(--space-xs) 0;
+      color: var(--deep-space);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-xs);
+    }
+
+    .pricing-card li::before {
+      content: "✓";
+      color: var(--growth-green);
+      font-weight: 700;
+    }
+
+    .pricing-card .btn-primary {
+      width: 100%;
+      text-align: center;
+      display: block;
+    }
+
+    /* ===== Process Section ===== */
+    .process {
+      background: var(--clarity-white);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-lg);
+      counter-reset: step;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: var(--space-lg);
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: var(--agent-blue);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin: 0 auto var(--space-md);
+    }
+
+    .process-step h3 {
+      margin-bottom: var(--space-xs);
+    }
+
+    .process-step p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* ===== CTA Section ===== */
+    .cta {
+      background: linear-gradient(135deg, var(--agent-blue) 0%, #00D4FF 100%);
+      color: white;
+      text-align: center;
+      padding: var(--space-2xl) 0;
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      margin-bottom: var(--space-md);
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-lg);
+      opacity: 0.95;
+    }
+
+    .cta .btn-primary {
+      background: white;
+      color: var(--agent-blue);
+    }
+
+    .cta .btn-primary:hover {
+      background: var(--lumis-light);
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: var(--deep-space);
+      color: white;
+      padding: var(--space-xl) 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .footer-logo svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .footer-logo span {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--space-lg);
+    }
+
+    .footer-links a {
+      color: white;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: var(--space-lg);
+      margin-top: var(--space-lg);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .pricing-card.featured {
+        transform: none;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="container nav-container">
-            <a href="#" class="nav-logo">
-                <img src="../brand/logo.svg" alt="Lumis Studio" width="120">
-            </a>
-            <div class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#work">Our Work</a>
-                <a href="#process">Process</a>
-                <a href="#contact" class="btn btn-primary">Get Started</a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="#" class="logo">
+        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="25" cy="25" r="12" fill="#0066FF"/>
+          <g stroke="#0066FF" stroke-width="2.5" stroke-linecap="round">
+            <line x1="25" y1="4" x2="25" y2="8"/>
+            <line x1="25" y1="42" x2="25" y2="46"/>
+            <line x1="4" y1="25" x2="8" y2="25"/>
+            <line x1="42" y1="25" x2="46" y2="25"/>
+            <line x1="8.07" y1="8.07" x2="10.89" y2="10.89"/>
+            <line x1="39.11" y1="39.11" x2="41.93" y2="41.93"/>
+            <line x1="8.07" y1="41.93" x2="10.89" y2="39.11"/>
+            <line x1="39.11" y1="10.89" x2="41.93" y2="8.07"/>
+          </g>
+        </svg>
+        <span class="logo-text">Lumis Studio</span>
+      </a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="cta-button">Get Started</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-badge">Agent-first Web Agency</span>
-                <h1>Websites That Work Themselves</h1>
-                <p class="hero-subtitle">We build autonomous web systems that optimize, adapt, and grow your business while you sleep. Human design + AI agents = unstoppable growth.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary btn-large">Start Your Project</a>
-                    <a href="#work" class="btn btn-secondary btn-large">See Our Work</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">2.3x</span>
-                        <span class="stat-label">Faster Delivery</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">95%</span>
-                        <span class="stat-label">Client Satisfaction</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Agent Monitoring</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="agent-node">
-                    <div class="agent-icon">🤖</div>
-                    <div class="agent-label">SEO Agent</div>
-                </div>
-                <div class="agent-node">
-                    <div class="agent-icon">📊</div>
-                    <div class="agent-label">Analytics Agent</div>
-                </div>
-                <div class="agent-node">
-                    <div class="agent-icon">🎯</div>
-                    <div class="agent-label">Conversion Agent</div>
-                </div>
-                <div class="agent-node">
-                    <div class="agent-icon">🛡️</div>
-                    <div class="agent-label">Security Agent</div>
-                </div>
-                <div class="agent-hub">
-                    <div class="hub-icon">L</div>
-                    <div class="hub-label">Lumis Hub</div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Websites That Work<br>Themselves</h1>
+      <p class="tagline">Agent-first web agency. Build once, let autonomous systems optimize, adapt, and grow your online presence 24/7.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Start Your Project</a>
+        <a href="#services" class="btn-secondary">View Pricing</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Problem Section -->
-    <section class="problem">
-        <div class="container">
-            <div class="section-header">
-                <h2>Traditional Web Agencies Are Broken</h2>
-                <p>Most agencies charge premium rates for work that sits static the moment it launches. Not Lumis.</p>
-            </div>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">⏱️</div>
-                    <h3>Slow Delivery</h3>
-                    <p>Weeks or months for a site that could be built in days. You're paying for process, not progress.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🔒</div>
-                    <h3>Static After Launch</h3>
-                    <p>Once your site goes live, it stops improving. No optimization, no adaptation, no growth.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">💸</div>
-                    <h3>Hidden Costs</h3>
-                    <p>Every change requires another bill. Maintenance becomes a revenue stream for them, not a value for you.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🤷</div>
-                    <h3>No Real ROI</h3>
-                    <p>Beautiful sites that don't convert. Agencies focus on aesthetics, not outcomes.</p>
-                </div>
-            </div>
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Agent-First?</h2>
+        <p>Traditional agencies build static sites. We build living systems.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>Autonomous Optimization</h3>
+          <p>AI agents continuously monitor and improve your site's performance, SEO, and conversions without manual intervention.</p>
         </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section class="solution" id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Our Solution</span>
-                <h2>Agent-First Web Development</h2>
-                <p>Every Lumis project includes autonomous agents that keep your site performing at its peak, long after launch.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-header">
-                        <span class="service-tier">Starter</span>
-                        <span class="service-price">$1,800 - $3,000</span>
-                    </div>
-                    <h3>Professional Presence</h3>
-                    <p>Perfect for solopreneurs and small businesses who need a polished, fast, and effective online presence.</p>
-                    <ul class="service-features">
-                        <li>Custom landing page</li>
-                        <li>Mobile-responsive design</li>
-                        <li>Basic SEO setup</li>
-                        <li>Contact form integration</li>
-                        <li>Performance monitoring agent</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary btn-block">Get Started</a>
-                </div>
-                <div class="service-card featured">
-                    <div class="service-badge">Most Popular</div>
-                    <div class="service-header">
-                        <span class="service-tier">Growth</span>
-                        <span class="service-price">$3,500 - $7,000</span>
-                    </div>
-                    <h3>Scale-Ready Websites</h3>
-                    <p>For growing businesses that need a full site with conversion optimization and automated monitoring.</p>
-                    <ul class="service-features">
-                        <li>Multi-page website (3-7 pages)</li>
-                        <li>Custom design system</li>
-                        <li>CMS integration</li>
-                        <li>Advanced SEO + monitoring</li>
-                        <li>Conversion tracking agent</li>
-                        <li>30 days post-launch support</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-header">
-                        <span class="service-tier">Autonomous</span>
-                        <span class="service-price">$8,000 - $15,000+</span>
-                    </div>
-                    <h3>Fully Autonomous Systems</h3>
-                    <p>Complete AI-powered websites with multiple agents working continuously to optimize and grow your business.</p>
-                    <ul class="service-features">
-                        <li>Full custom website</li>
-                        <li>AI chatbot integration</li>
-                        <li>Content generation agent</li>
-                        <li>Performance optimization agent</li>
-                        <li>Security monitoring agent</li>
-                        <li>Quarterly optimization reviews</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary btn-block">Get Started</a>
-                </div>
-            </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>Built with modern tech stacks and optimized delivery. 90+ Lighthouse scores standard.</p>
         </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="process" id="process">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Process</span>
-                <h2>How We Work</h2>
-                <p>Our agent-first methodology means faster delivery and better results.</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <h3>Discovery</h3>
-                    <p>We learn your goals, audience, and competitive landscape. No templated solutions.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <h3>Design</h3>
-                    <p>Custom design system created for your brand. We move fast, iterate with you.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <h3>Build</h3>
-                    <p>We code with performance and agents in mind. Clean, documented, future-ready.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <h3>Launch + Handoff</h3>
-                    <p>Deploy with confidence. Your agents go live and start working immediately.</p>
-                </div>
-            </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Self-Growing</h3>
+          <p>Content agents suggest updates, SEO improvements, and new pages based on trends and data.</p>
         </div>
-    </section>
-
-    <!-- Portfolio Preview -->
-    <section class="work" id="work">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Portfolio</span>
-                <h2>Recent Projects</h2>
-                <p>Real results from real clients using our agent-first approach.</p>
-            </div>
-            <div class="work-grid">
-                <div class="work-case">
-                    <div class="work-image" style="background: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);">
-                        <div class="work-overlay">
-                            <span class="work-category">E-commerce</span>
-                            <h3>Artisan Coffee Co.</h3>
-                            <p>Multi-page site with autonomous SEO agent that increased organic traffic by 45% in 3 months.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="work-case">
-                    <div class="work-image" style="background: linear-gradient(135deg, #10B981 0%, #0066FF 100%);">
-                        <div class="work-overlay">
-                            <span class="work-category">SaaS</span>
-                            <h3>DevTools Pro</h3>
-                            <p>Conversion-optimized landing page with A/B testing agent. 2.3x increase in trial signups.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="work-case">
-                    <div class="work-image" style="background: linear-gradient(135deg, #F59E0B 0%, #0066FF 100%);">
-                        <div class="work-overlay">
-                            <span class="work-category">Portfolio</span>
-                            <h3>Sarah Chen Design</h3>
-                            <p>Personal portfolio with performance agent maintaining 98+ Lighthouse scores.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Always Secure</h3>
+          <p>Security agents scan for vulnerabilities and auto-update dependencies to keep you protected.</p>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta" id="contact">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Build Something That Works?</h2>
-                <p>Let's discuss your project and how our agent-first approach can deliver better results, faster.</p>
-                <form class="cta-form" id="contactForm">
-                    <div class="form-row">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Email Address" required>
-                    </div>
-                    <div class="form-row">
-                        <select name="budget" required>
-                            <option value="" disabled selected>Estimated Budget</option>
-                            <option value="starter">$1,800 - $3,000 (Starter)</option>
-                            <option value="growth">$3,500 - $7,000 (Growth)</option>
-                            <option value="autonomous">$8,000 - $15,000+ (Autonomous)</option>
-                            <option value="custom">Custom / Not Sure</option>
-                        </select>
-                        <input type="text" name="website" placeholder="Current Website (optional)">
-                    </div>
-                    <textarea name="message" placeholder="Tell us about your project, goals, and timeline..." rows="4" required></textarea>
-                    <button type="submit" class="btn btn-primary btn-large btn-block">Send Project Inquiry</button>
-                </form>
-            </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Conversion Focused</h3>
+          <p>A/B testing agents experiment with CTAs, layouts, and messaging to maximize your results.</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="../brand/logo.svg" alt="Lumis Studio" width="120">
-                    <p>Agent-first web agency building autonomous systems that grow your business.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Services</h4>
-                        <a href="#services">Starter</a>
-                        <a href="#services">Growth</a>
-                        <a href="#services">Autonomous</a>
-                        <a href="#services">Add-Ons</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="#work">Portfolio</a>
-                        <a href="#process">Process</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Connect</h4>
-                        <a href="#">Twitter</a>
-                        <a href="#">LinkedIn</a>
-                        <a href="#">GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Lumis Studio. All rights reserved.</p>
-            </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Smart Interactions</h3>
+          <p>Integrated chatbots and virtual assistants handle customer questions 24/7.</p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Services/Pricing Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Simple, Transparent Pricing</h2>
+        <p>Three tiers designed to scale with your business.</p>
+      </div>
+      <div class="pricing-grid">
+        <!-- Starter Tier -->
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <div class="price">$1,800<span>+</span></div>
+          <p>For solopreneurs and small businesses needing a professional presence.</p>
+          <ul>
+            <li>Custom landing page (1-3 sections)</li>
+            <li>Mobile-responsive design</li>
+            <li>Basic SEO setup</li>
+            <li>Contact form integration</li>
+            <li>Fast loading (&lt;2s target)</li>
+            <li>1 round of revisions</li>
+            <li>5-7 day timeline</li>
+          </ul>
+          <a href="#contact" class="btn-primary">Get Started</a>
+        </div>
+
+        <!-- Growth Tier -->
+        <div class="pricing-card featured">
+          <div class="popular-badge">Most Popular</div>
+          <h3>Growth</h3>
+          <div class="price">$3,500<span>+</span></div>
+          <p>For growing businesses needing multi-page sites with conversion focus.</p>
+          <ul>
+            <li>Multi-page website (3-7 pages)</li>
+            <li>Custom design system</li>
+            <li>CMS integration</li>
+            <li>Advanced SEO optimization</li>
+            <li>Analytics dashboard</li>
+            <li>Automated SEO monitoring</li>
+            <li>30 days post-launch support</li>
+            <li>2-3 week timeline</li>
+          </ul>
+          <a href="#contact" class="btn-primary">Get Started</a>
+        </div>
+
+        <!-- Autonomous Tier -->
+        <div class="pricing-card">
+          <h3>Autonomous</h3>
+          <div class="price">$8,000<span>+</span></div>
+          <p>For businesses ready for AI-powered, self-optimizing web systems.</p>
+          <ul>
+            <li>Full-scale custom website</li>
+            <li>Advanced agent integrations</li>
+            <li>Custom AI workflows</li>
+            <li>Chatbot/virtual assistant</li>
+            <li>Dynamic content personalization</li>
+            <li>Quarterly optimization reviews</li>
+            <li>90 days priority support</li>
+            <li>4-6 week timeline</li>
+          </ul>
+          <a href="#contact" class="btn-primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="process" class="process">
+    <div class="container">
+      <div class="section-header">
+        <h2>How We Work</h2>
+        <p>Simple, transparent process from start to finish.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Discovery</h3>
+          <p>We learn about your business, goals, and audience. You get a clear proposal.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Design</h3>
+          <p>Custom mockups tailored to your brand. Revisions until it's perfect.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Build</h3>
+          <p>We code your site with clean, modern tech. Regular updates throughout.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>Launch & Grow</h3>
+          <p>Site goes live. Agents start optimizing. You focus on your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contact" class="cta">
+    <div class="container">
+      <h2>Ready to Build Something Smart?</h2>
+      <p>Let's discuss your project. No pressure, just honest advice and clear pricing.</p>
+      <a href="mailto:hello@lumis.studio" class="btn-primary">hello@lumis.studio</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="25" cy="25" r="12" fill="#0066FF"/>
+            <g stroke="#0066FF" stroke-width="2.5" stroke-linecap="round">
+              <line x1="25" y1="4" x2="25" y2="46"/>
+              <line x1="4" y1="25" x2="46" y2="25"/>
+            </g>
+          </svg>
+          <span>Lumis Studio</span>
+        </div>
+        <div class="footer-links">
+          <a href="#features">Features</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="mailto:hello@lumis.studio">Contact</a>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2026 Lumis Studio. Agent-first Web Agency. All rights reserved.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
