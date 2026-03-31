@@ -28,22 +28,32 @@ Minimal sunburst background for Lumis Studio hero, centered soft sunburst effect
 
 ### Primary Logo (Icon + Wordmark)
 ```
-Minimal modern logo for web agency called "Lumis Studio", simple sun icon with 8 radiating lines, clean geometric style, primary blue color (#0066FF), wordmark "Lumis" in modern sans-serif font next to icon, "STUDIO" in smaller text below, white background, vector style, flat design, professional tech company logo, clean and memorable
+Modern tech company logo for "Lumis Studio", abstract sun/light mark using negative space and geometric shapes, gradient from electric blue to cyan (#0066FF to #00D4FF), sleek wordmark "Lumis" in custom geometric sans-serif, "studio" in lighter weight below, white background, premium SaaS aesthetic like Linear or Stripe, clean vector design, subtle depth through gradients not shadows, professional and memorable, minimal but not boring
 ```
 
 ### Icon Only (Favicon/App Icon)
 ```
-Minimal sun icon logo, simple circle center with 8 short radiating lines, clean geometric style, primary blue (#0066FF) on white background, flat design, suitable for favicon and app icon, modern and memorable, tech company aesthetic, 512x512 resolution
+Abstract sun/light logo icon for tech company, geometric interpretation of sunrise using negative space and overlapping shapes, gradient blue to cyan (#0066FF to #00D4FF), premium SaaS aesthetic, works at small sizes, clean geometric construction, no literal sun rays, modern and sophisticated, white background, 512x512 pixels, flat design with subtle gradient
 ```
 
 ### Dark Mode Logo
 ```
-Minimal sun icon logo, simple circle center with 8 radiating lines, clean geometric style, white (#FFFFFF) on dark background (#0A0A0F), flat design, modern tech aesthetic, high contrast, suitable for dark mode interfaces, 512x512 resolution
+Abstract sun/light logo icon, geometric interpretation using negative space, gradient from electric blue to cyan, dark background (#0A0A0F), premium tech aesthetic, clean and modern, high contrast, subtle glow effect around icon, 512x512 pixels
 ```
 
 ### Animated Logo Concept
 ```
-Minimal sun icon logo, simple circle center with 8 radiating lines, primary blue (#0066FF), subtle pulsing glow animation on the center circle, rays gently extend and retract in a breathing motion, clean geometric style, modern tech aesthetic, white background, 5-second loop animation concept
+Abstract geometric sun logo, overlapping semicircular shapes forming a sunrise, gradient blue to cyan, subtle animation where shapes slide into place and gradient flows, premium SaaS aesthetic, 3-second intro animation, white background, clean and sophisticated
+```
+
+### Alternative: Monogram Style
+```
+Lettermark logo "L" for Lumis Studio, geometric letter L that subtly suggests a rising sun or light beam, gradient blue to cyan (#0066FF to #00D4FF), clean geometric construction, premium tech company aesthetic, works as standalone icon, white background, modern and memorable
+```
+
+### Alternative: Abstract Mark (No Literal Sun)
+```
+Abstract brand mark for web agency, geometric shape suggesting illumination and clarity through overlapping translucent planes, gradient blue to cyan, no literal sun or lightbulb, sophisticated tech aesthetic like Vercel or Raycast, clean vector design, white background, memorable at any size
 ```
 
 ---
